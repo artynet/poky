@@ -3,7 +3,8 @@ require go-target.inc
 
 inherit linuxloader
 
-export GOBUILDMODE=""
+CGO_LDFLAGS:append = " -no-pie"
+
 export GO_LDSO = "${@get_linuxloader(d)}"
 export CC_FOR_TARGET = "gcc"
 export CXX_FOR_TARGET = "g++"
