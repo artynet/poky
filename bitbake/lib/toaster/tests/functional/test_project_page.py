@@ -717,7 +717,7 @@ class TestProjectPage(SeleniumFunctionalTestCase):
         # check add layer button works
         remove_layer_btn = self.driver.find_element(
             By.XPATH,
-            "//td[@class='add-del-layers']//a[contains(@class, 'layer-btn') and @data-directive='remove']",
+            "//td[@class='add-del-layers']//a[@data-directive='remove']",
         )
         remove_layer_btn.click()
         self.wait_until_visible('#change-notification', poll=2)
@@ -728,7 +728,7 @@ class TestProjectPage(SeleniumFunctionalTestCase):
         # check add layer button works, 18 is the random layer id
         add_layer_btn = self.driver.find_element(
             By.XPATH,
-            "//td[@class='add-del-layers']//a[contains(@class, 'layer-btn') and @data-directive='add']",
+            "//td[@class='add-del-layers']//a[@data-directive='add']",
         )
         add_layer_btn.click()
         self.wait_until_visible('#change-notification')
